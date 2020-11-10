@@ -68,9 +68,10 @@ public class pos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PSG Grocery Bill");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sales", 0, 0, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
         jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
@@ -432,7 +433,7 @@ public class pos extends javax.swing.JFrame {
          txtbill.setText(txtbill.getText() + "*************************************************\n");
          
          //Heading
-          txtbill.setText(txtbill.getText() + "Product" + "\t\t" + "Price" + "\t\t" + "Amount" + "\n"  );
+          txtbill.setText(txtbill.getText() + "Product" + "\t\t\t" + "Price" + "\t" + "Amount" + "\n");
           
           
           for(int i = 0; i < model.getRowCount(); i++)
@@ -442,15 +443,15 @@ public class pos extends javax.swing.JFrame {
               String price = (String)model.getValueAt(i, 3);
               String amount = (String)model.getValueAt(i, 4); 
               
-           txtbill.setText(txtbill.getText() + pname  + "\t" + price + "\t" + amount  + "\n"  );
+           txtbill.setText(txtbill.getText() + pname  + "\t\t" + price + "\t" + amount  + "\n"  );
     
           }
           
           txtbill.setText(txtbill.getText() + "\n");     
           
-          txtbill.setText(txtbill.getText() + "\t" + "\t" + "Subtotal :" + total + "\n");
-          txtbill.setText(txtbill.getText() + "\t" + "\t" + "Pay :" + pay + "\n");
-          txtbill.setText(txtbill.getText() + "\t" + "\t" + "Balance :" + bal + "\n");
+          txtbill.setText(txtbill.getText() + "\t" + "\t\t\t" + "Subtotal :" + total + "\n");
+          txtbill.setText(txtbill.getText() + "\t" + "\t\t\t" + "Pay      :" + pay + "\n");
+          txtbill.setText(txtbill.getText() + "\t" + "\t\t\t" + "Balance  :" + bal + "\n");
           txtbill.setText(txtbill.getText() + "\n");
           txtbill.setText(txtbill.getText() + "*************************************************\n");
           txtbill.setText(txtbill.getText() + "           THANK YOU VISIT AGIN             \n");
@@ -515,7 +516,6 @@ public class pos extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
